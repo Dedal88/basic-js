@@ -10,21 +10,14 @@ const chainMaker = {
     return this.chainWrap.length;
   },
   addLink(value) {
-    // if (!value) {
-    //   this.chainWrap.push(`(  )`);
-    // }
     this.chainWrap.push(`( ${value} )`);
 
     return this;
   },
   removeLink(position) {
     if (
-      // typeof position !== 'number' ||
-      // Number.isInteger(position) !== true ||
-      // !this.chainWrap[position] ||
-      // Number.isNaN(+position)
-      Number.isNaN(+position) ||
       position < 1 ||
+      Number.isNaN(+position) ||
       position > this.chainWrap.length
     ) {
       this.chainWrap = [];
